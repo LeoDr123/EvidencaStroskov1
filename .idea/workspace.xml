@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="" />
+    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lib/postgresql-42.7.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MojProjektLD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MojProjektLD.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UrediPodatke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrediPodatke.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domacastran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domacastran.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +21,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2doygTwchZYzNhTI7Am3NKBEooc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,13 +32,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Login.executor": "Run",
+    "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "MainScreen__LoginScreen__SignupScreen",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/LDprojekt/MojProjektLD/src/lib",
     "onboarding.tips.debug.path": "C:/LDprojekt/MojProjektLD/src/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LDprojekt\MojProjektLD\src\lib" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

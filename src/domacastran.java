@@ -19,10 +19,16 @@ public class domacastran {
 
         JPanel panel = new JPanel(new BorderLayout());
 
+        // Fetch and display user's account balance
+        double accountBalance = fetchAccountBalance(userId);
+        JLabel balanceLabel = new JLabel("Stanje na računu: " + accountBalance + " €");
+        balanceLabel.setFont(new Font("Arial", Font.BOLD, 18));
+        panel.add(balanceLabel, BorderLayout.NORTH);
+
         // Header label
         JLabel label = new JLabel("Dobrodošli na Domači Strani!");
         label.setFont(new Font("Arial", Font.BOLD, 20));
-        panel.add(label, BorderLayout.NORTH);
+        panel.add(label, BorderLayout.CENTER);
 
         // Table to display user's expenses
         JTable table = new JTable();
@@ -85,6 +91,27 @@ public class domacastran {
 
         frame.getContentPane().add(panel);
         frame.setVisible(true);
+    }
+
+    private static double fetchAccountBalance(int userId) {
+        double accountBalance = 0.0;
+        try {
+            Connection connection = DriverManager.getConnection(JDBC_URL, PGUSER, PGPASSWORD);
+            String query = "SELECT stanje FROM racuni WHERE uporabnik_id = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setInt(1, userId);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                accountBalance = resultSet.getDouble("stanje");
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Napaka pri pridobivanju stanja na računu: " + e.getMessage(), "Napaka", JOptionPane.ERROR_MESSAGE);
+        }
+        return accountBalance;
     }
 
     public static void main(String[] args) {
