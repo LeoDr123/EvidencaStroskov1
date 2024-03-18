@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani">
-      <change afterPath="$PROJECT_DIR$/src/DodajPodatke.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/swingx-all-1.6.4.jar" afterDir="false" />
+    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="Naredili smo UPDATE,DELETE podatkov">
+      <change afterPath="$PROJECT_DIR$/src/DodajPodjetje.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UrediPodatke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrediPodatke.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domacastran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domacastran.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DodajPodatke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DodajPodatke.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MainScreen_LoginScreen_SignupScreen" />
+        <entry key="$PROJECT_DIR$" value="Funkcionalnost_urejanja_dodajanja_podatkov" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,7 +45,7 @@
     "Application.domacastran.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Funkcionalnost__urejanja__dodajanja__podatkov",
+    "git-widget-placeholder": "Dodajanje-novih-podjetij-in-njihovih-krajev",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/timur/OneDrive/Desktop/LGoodDatePicker-master",
     "onboarding.tips.debug.path": "C:/LDprojekt/MojProjektLD/src/Main.java",
@@ -89,12 +86,21 @@
       <option name="project" value="LOCAL" />
       <updated>1710773207527</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Naredili smo UPDATE,DELETE podatkov">
+      <option name="closed" value="true" />
+      <created>1710785496206</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710785496206</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani" />
-    <option name="LAST_COMMIT_MESSAGE" value="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani" />
+    <MESSAGE value="Naredili smo UPDATE,DELETE podatkov" />
+    <option name="LAST_COMMIT_MESSAGE" value="Naredili smo UPDATE,DELETE podatkov" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

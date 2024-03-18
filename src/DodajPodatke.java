@@ -1,8 +1,8 @@
+// DodajPodatke.java
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -20,7 +20,7 @@ public class DodajPodatke {
         frame.setSize(400, 300); // Set size to 400x300
         frame.setLocationRelativeTo(parentFrame);
 
-        JPanel panel = new JPanel(new GridLayout(6, 2));
+        JPanel panel = new JPanel(new GridLayout(7, 2));
 
         JLabel typeLabel = new JLabel("Vrsta:");
         JComboBox<String> typeComboBox = new JComboBox<>(new String[]{"Prihodek", "Poraba"});
@@ -34,6 +34,7 @@ public class DodajPodatke {
         JLabel companyLabel = new JLabel("Podjetje:");
         JComboBox<String> companyComboBox = new JComboBox<>(fetchCompanyNames());
         JButton addButton = new JButton("Dodaj");
+        JButton addCompanyButton = new JButton("Dodaj Podjetje"); // Button to open the DodajPodjetje.java window
 
         panel.add(typeLabel);
         panel.add(typeComboBox);
@@ -45,8 +46,14 @@ public class DodajPodatke {
         panel.add(amountField);
         panel.add(companyLabel);
         panel.add(companyComboBox);
-        panel.add(new JLabel()); // Empty label for spacing
+        panel.add(addCompanyButton); // Add button to the panel
         panel.add(addButton);
+
+        // Action listener for the addCompanyButton
+        addCompanyButton.addActionListener(e -> {
+            // Open the DodajPodjetje.java window and pass the companyComboBox reference
+            new DodajPodjetje(frame, companyComboBox);
+        });
 
         addButton.addActionListener(e -> {
             try {
