@@ -35,9 +35,9 @@ public class Main {
             // Ustanovitev povezave s podatkovno bazo
             Connection connection = getConnection();
 
-            // Priprava SQL poizvedbe za vstavljanje novega uporabnika
-            String sql = "INSERT INTO uporabniki (ime, priimek, eposta, telefon, geslo, kraj_id) VALUES (?, ?, ?, ?, ?, (SELECT id FROM kraji WHERE ime = ?))";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            // Priprava klica shranjenega postopka
+            String sql = "{CALL vstaviuporabnika(?, ?, ?, ?, ?, ?)}";
+            CallableStatement statement = connection.prepareCall(sql);
             statement.setString(1, firstName);
             statement.setString(2, lastName);
             statement.setString(3, email);
@@ -45,21 +45,23 @@ public class Main {
             statement.setString(5, password);
             statement.setString(6, selectedCity);
 
-            // Izvedba SQL poizvedbe
-            int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) {
-                JOptionPane.showMessageDialog(null, "Nov uporabnik uspešno dodan.", "Registracija uspešna", JOptionPane.INFORMATION_MESSAGE);
-                return true;
-            }
+            // Izvedba klica shranjenega postopka
+            statement.execute();
+
+            // Če je klic uspešen, prikažemo sporočilo o uspešni registraciji
+            JOptionPane.showMessageDialog(null, "Nov uporabnik uspešno dodan.", "Registracija uspešna", JOptionPane.INFORMATION_MESSAGE);
 
             // Zapiranje povezave s podatkovno bazo
             statement.close();
             connection.close();
+
+            return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Napaka pri registraciji uporabnika: " + e.getMessage(), "Napaka", JOptionPane.ERROR_MESSAGE);
+            return false;
         }
-        return false;
     }
+
 
     // Metoda za preverjanje veljavnosti e-poštnega naslova
     private static boolean isValidEmail(String email) {

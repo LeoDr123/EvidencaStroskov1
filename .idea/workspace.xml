@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="Naredili smo UPDATE,DELETE podatkov">
-      <change afterPath="$PROJECT_DIR$/src/DodajPodjetje.java" afterDir="false" />
+    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="Naredili smo da lahko dodaš novo podjetje in izbereš iz katerega kraja prihaja podjetje.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DodajPodatke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DodajPodatke.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DodajPodjetje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DodajPodjetje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UrediPodatke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrediPodatke.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domacastran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domacastran.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Funkcionalnost_urejanja_dodajanja_podatkov" />
+        <entry key="$PROJECT_DIR$" value="Dodajanje-novih-podjetij-in-njihovih-krajev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,7 +48,7 @@
     "Application.domacastran.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Dodajanje-novih-podjetij-in-njihovih-krajev",
+    "git-widget-placeholder": "Klicanje-strežniških-podprogramov",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/timur/OneDrive/Desktop/LGoodDatePicker-master",
     "onboarding.tips.debug.path": "C:/LDprojekt/MojProjektLD/src/Main.java",
@@ -94,13 +97,22 @@
       <option name="project" value="LOCAL" />
       <updated>1710785496206</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Naredili smo da lahko dodaš novo podjetje in izbereš iz katerega kraja prihaja podjetje.">
+      <option name="closed" value="true" />
+      <created>1710787253895</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710787253895</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani" />
     <MESSAGE value="Naredili smo UPDATE,DELETE podatkov" />
-    <option name="LAST_COMMIT_MESSAGE" value="Naredili smo UPDATE,DELETE podatkov" />
+    <MESSAGE value="Naredili smo da lahko dodaš novo podjetje in izbereš iz katerega kraja prihaja podjetje." />
+    <option name="LAST_COMMIT_MESSAGE" value="Naredili smo da lahko dodaš novo podjetje in izbereš iz katerega kraja prihaja podjetje." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
