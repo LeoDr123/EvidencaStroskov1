@@ -40,8 +40,10 @@ public class UrediPodatke {
             public void actionPerformed(ActionEvent e) {
                 try {
                     Connection connection = DriverManager.getConnection(JDBC_URL, PGUSER, PGPASSWORD);
-                    String query = "UPDATE racuni SET datum = ?, opis = ?, znesek = ? WHERE uporabnik_id = ? AND datum = CAST(? AS TIMESTAMP) AND opis = ?";
-                    PreparedStatement statement = connection.prepareStatement(query);
+
+                    // Klic shranjenega postopka
+                    String callProcedure = "{CALL PosodobiRacune(?, ?, ?, ?, ?, ?)}";
+                    CallableStatement statement = connection.prepareCall(callProcedure);
 
                     // Pretvorba niza v Timestamp
                     String dateString = dateField.getText() + " 00:00:00"; // Dodamo čas del datuma
@@ -53,9 +55,10 @@ public class UrediPodatke {
                     statement.setInt(4, userId);
                     statement.setString(5, date);
                     statement.setString(6, description);
-                    int rowsAffected = statement.executeUpdate();
 
-                    if (rowsAffected > 0) {
+                    boolean result = statement.execute();
+
+                    if (!result) {
                         JOptionPane.showMessageDialog(null, "Podatki uspešno posodobljeni.", "Posodobitev uspešna", JOptionPane.INFORMATION_MESSAGE);
                         frame.dispose();
                         // Osvežitev tabele v domacastran.java
@@ -71,6 +74,7 @@ public class UrediPodatke {
                     JOptionPane.showMessageDialog(null, "Napaka pri posodabljanju podatkov: " + ex.getMessage(), "Napaka", JOptionPane.ERROR_MESSAGE);
                 }
             }
+
         });
 
 

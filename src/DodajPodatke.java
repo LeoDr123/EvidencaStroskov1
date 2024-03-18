@@ -59,7 +59,7 @@ public class DodajPodatke {
             try {
                 Connection conn = DriverManager.getConnection(JDBC_URL, PGUSER, PGPASSWORD);
                 double amount = Double.parseDouble(amountField.getText());
-                double currentBalance = fetchAccountBalance(userId); // Pridobi trenutno stanje računa (uporabnik ID začasno trdno kodiran)
+                double currentBalance = fetchAccountBalance(userId);
                 double newBalance;
 
                 if (typeComboBox.getSelectedItem().equals("Prihodek")) {
@@ -70,27 +70,23 @@ public class DodajPodatke {
 
                 String insertQuery;
                 if (typeComboBox.getSelectedItem().equals("Prihodek")) {
-                    insertQuery = "INSERT INTO racuni (datum, opis, znesek, uporabnik_id, podjetje_id, prihodek_id) VALUES (?, ?, ?, ?, ?, null)";
+                    insertQuery = "{CALL insert_racuni_prihodek(?, ?, ?, ?, ?)}";
                 } else {
-                    insertQuery = "INSERT INTO racuni (datum, opis, znesek, uporabnik_id, podjetje_id, porabnina_id) VALUES (?, ?, ?, ?, ?, null)";
-                    amount *= -1; // Za porabo odštejemo znesek
+                    insertQuery = "{CALL insert_racuni_porabnina(?, ?, ?, ?, ?)}";
+                    amount *= -1;
                 }
-                PreparedStatement insertStatement = conn.prepareStatement(insertQuery);
-                insertStatement.setDate(1, new java.sql.Date(datePicker.getDate().getTime())); // Convert to java.sql.Date
+                CallableStatement insertStatement = conn.prepareCall(insertQuery);
+                insertStatement.setDate(1, new java.sql.Date(datePicker.getDate().getTime()));
                 insertStatement.setString(2, descriptionField.getText());
                 insertStatement.setDouble(3, amount);
-                insertStatement.setInt(4, userId); // Hard-coded user ID for now
+                insertStatement.setInt(4, userId);
                 insertStatement.setInt(5, getSelectedCompanyId((String) companyComboBox.getSelectedItem()));
-                insertStatement.executeUpdate();
+                insertStatement.execute();
                 insertStatement.close();
 
-                // Posodobi stanje računa
                 updateAccountBalance(conn, userId, newBalance);
 
-                // Close the frame after successful insertion
                 frame.dispose();
-
-                // Refresh the table in domacastran.java
                 domacastran.refreshTable(userId);
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -99,6 +95,7 @@ public class DodajPodatke {
                 JOptionPane.showMessageDialog(null, "Znesek mora biti številka.", "Napaka", JOptionPane.ERROR_MESSAGE);
             }
         });
+
 
         frame.getContentPane().add(panel);
         frame.setVisible(true);

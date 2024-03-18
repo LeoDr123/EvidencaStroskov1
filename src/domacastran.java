@@ -201,24 +201,24 @@ class ButtonClickListener extends MouseAdapter {
         if (choice == JOptionPane.YES_OPTION) {
             try {
                 Connection connection = DriverManager.getConnection(jdbcUrl, pgUser, pgPassword);
-                String query = "DELETE FROM racuni WHERE uporabnik_id = ? AND datum = ? AND opis = ?";
-                PreparedStatement statement = connection.prepareStatement(query);
+
+                // Klic shranjenega postopka
+                String callProcedure = "{CALL IzbrisiRacune(?, ?, ?)}";
+                CallableStatement statement = connection.prepareCall(callProcedure);
                 statement.setInt(1, userId);
 
                 // Pretvorba niza v java.sql.Date
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 java.sql.Date parsedDate = new java.sql.Date(format.parse(date).getTime());
 
-                // Nastavitev parametra kot java.sql.Date
+                // Nastavitev parametrov klica shranjenega postopka
                 statement.setDate(2, parsedDate);
                 statement.setString(3, description);
-                int rowsDeleted = statement.executeUpdate();
-                if (rowsDeleted > 0) {
-                    JOptionPane.showMessageDialog(null, "Transakcija uspešno izbrisana.");
-                    domacastran.refreshTable(userId);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Napaka pri brisanju transakcije: Transakcija ni bila najdena.");
-                }
+                statement.execute();
+
+                JOptionPane.showMessageDialog(null, "Transakcija uspešno izbrisana.");
+                domacastran.refreshTable(userId);
+
                 statement.close();
                 connection.close();
             } catch (SQLException | ParseException ex) {
@@ -227,5 +227,6 @@ class ButtonClickListener extends MouseAdapter {
             }
         }
     }
+
 
 }

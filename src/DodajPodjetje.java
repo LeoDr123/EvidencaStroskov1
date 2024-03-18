@@ -44,13 +44,13 @@ public class DodajPodjetje {
                 // Fetch the ID of the selected city
                 int cityId = getCityId(selectedCity);
 
-                // Insert the new company into the database
-                String insertQuery = "INSERT INTO podjetja (ime, kraj_id) VALUES (?, ?)";
-                PreparedStatement insertStatement = conn.prepareStatement(insertQuery);
-                insertStatement.setString(1, name);
-                insertStatement.setInt(2, cityId);
-                insertStatement.executeUpdate();
-                insertStatement.close();
+                // Call the server-side stored procedure to insert the new company into the database
+                String callProcedure = "{CALL vstavi_podjetje(?, ?)}";
+                CallableStatement callStatement = conn.prepareCall(callProcedure);
+                callStatement.setString(1, name);
+                callStatement.setInt(2, cityId);
+                callStatement.execute();
+                callStatement.close();
 
                 // Close the frame after successful insertion
                 frame.dispose();
@@ -62,6 +62,7 @@ public class DodajPodjetje {
                 JOptionPane.showMessageDialog(null, "Napaka pri dodajanju podjetja: " + ex.getMessage(), "Napaka", JOptionPane.ERROR_MESSAGE);
             }
         });
+
 
         frame.getContentPane().add(panel);
         frame.setVisible(true);
