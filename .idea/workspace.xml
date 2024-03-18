@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lib/postgresql-42.7.3.jar" afterDir="false" />
+    <list default="true" id="1f129ddb-a8cb-4a93-8446-1c3a0ffd1c10" name="Changes" comment="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani">
+      <change afterPath="$PROJECT_DIR$/src/DodajPodatke.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/swingx-all-1.6.4.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MojProjektLD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MojProjektLD.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UrediPodatke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UrediPodatke.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domacastran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domacastran.java" afterDir="false" />
     </list>
@@ -18,7 +17,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="MainScreen_LoginScreen_SignupScreen" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -34,16 +45,23 @@
   "keyToString": {
     "Application.Login.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.domacastran.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "MainScreen__LoginScreen__SignupScreen",
+    "git-widget-placeholder": "Funkcionalnost__urejanja__dodajanja__podatkov",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/LDprojekt/MojProjektLD/src/lib",
-    "onboarding.tips.debug.path": "C:/LDprojekt/MojProjektLD/src/Main.java"
+    "last_opened_file_path": "C:/Users/timur/OneDrive/Desktop/LGoodDatePicker-master",
+    "onboarding.tips.debug.path": "C:/LDprojekt/MojProjektLD/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LDprojekt\MojProjektLD\src\lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\LDprojekt\MojProjektLD\src\lib" />
     </key>
   </component>
@@ -63,7 +81,20 @@
       <option name="presentableId" value="Default" />
       <updated>1710688839089</updated>
     </task>
+    <task id="LOCAL-00001" summary="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani">
+      <option name="closed" value="true" />
+      <created>1710773207527</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710773207527</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani" />
+    <option name="LAST_COMMIT_MESSAGE" value="Naredili smo funkcionalnost logina,signupa in izpis stanja in drugih pomembnih podatkov na domači strani" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
